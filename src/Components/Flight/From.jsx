@@ -38,15 +38,15 @@ const From = () => {
     );
 
   return (
-    <div className="relative w-auto mx-[2%] xm:w-60 sm:w-73 md:w-80 lg:w-90 xl:w-[400px] 2xl:w-[450px]" ref={dropdownRef}>
+    <div className="relative w-full xs:w-48 sm:w-48 md:w-48 lg:w-56 xl:w-72 2xl:w-80" ref={dropdownRef}>
       {/* Input Box */}
       <div
-        className="border-none drop-shadow-sm p-3 rounded-l-lg cursor-pointer bg-white"
+        className="border-none drop-shadow-sm p-2 xs:p-3 rounded-l-lg cursor-pointer bg-white"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <p className="text-gray-500 mt-[-3px] text-sm">From</p>
-        <p className="text-xl font-bold">{selectedAirport.name.split(",")[0]}</p>
-        <p className="text-sm text-gray-500 truncate">{selectedAirport.details}</p>
+        <p className="text-gray-500 text-xs xs:text-sm">From</p>
+        <p className="text-lg xs:text-xl font-bold">{selectedAirport.name.split(",")[0]}</p>
+        <p className="text-xs xs:text-sm text-gray-500 truncate">{selectedAirport.details}</p>
       </div>
 
       {/* Dropdown */}
@@ -80,7 +80,7 @@ const From = () => {
                   <div className="flex items-center gap-2">
                     <FaPlane className="text-gray-400 text-sm" />
                     <div>
-                      <p className="font-semibold">{airport.name}</p>
+                      <p className="font-semibold text-sm xs:text-base">{airport.name}</p>
                       <p className="text-xs text-gray-500">{airport.details}</p>
                     </div>
                   </div>
@@ -106,7 +106,7 @@ const From = () => {
                   <div className="flex items-center gap-2">
                     <FaPlane className="text-gray-400 text-sm" />
                     <div>
-                      <p className="font-semibold">{airport.name}</p>
+                      <p className="font-semibold text-sm xs:text-base">{airport.name}</p>
                       <p className="text-xs text-gray-500">{airport.details}</p>
                     </div>
                   </div>
