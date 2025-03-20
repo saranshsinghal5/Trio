@@ -55,16 +55,18 @@ function Header() {
   return (
     <>
       <Link to="/">
-        <div className="h-[140px] md:h-[160px] lg:h-[180px] xl:h-[200px] 2xl:h-[220px] w-full bg-left-bottom bg-[url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-no-repeat">
+        {/* Increase the height of the background container */}
+        <div className="h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] 2xl:h-[650px] w-full bg-left-Top bg-[url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-no-repeat">
           <div className="pt-2 flex flex-row place-content-between">
             <RightImg />
             <Navbar />
           </div>
-          <div className="static h-[100px]  w-full xm:w-[90%] sm:w-[85%] md:w-[110%] lg:w-[90%] xl:w-[70%] 2xl:w-[65%] mx-auto">
+          <div className="static h-[100px] w-full xm:w-[90%] sm:w-[85%] md:w-[110%] lg:w-[90%] xl:w-[70%] 2xl:w-[65%] mx-auto">
             <Link to="/Flights">
               <div>
-                <div className="w-full h-[100px] flex justify-center ml-[5%] bg-white md:w-[82%] lg:w-[77%] xl:w-[65%] 2xl:w-[60%] rounded-xl mt-12 drop-shadow-xl absolute">
-                  <div className="pl-[1%] h-[100px]   rounded-lg gap-3 flex overflow-x-auto md:overflow-hidden ">
+                {/* Adjust the margin-top to position the white box correctly */}
+                <div className="w-full h-[100px] flex justify-center ml-[5%] bg-white md:w-[82%] lg:w-[77%] xl:w-[65%] 2xl:w-[60%] rounded-xl mt-12 md:mt-16 lg:mt-18 xl:mt-20 2xl:mt-24 drop-shadow-xl absolute">
+                  <div className="pl-[1%] h-[100px] rounded-lg gap-3 flex overflow-x-auto md:overflow-hidden">
                     {serviceData.map((elem, index) => (
                       <NavLink
                         key={index}

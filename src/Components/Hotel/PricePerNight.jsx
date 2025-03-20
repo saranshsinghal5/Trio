@@ -27,18 +27,18 @@ export default function PricePerNight() {
   }, []);
 
   return (
-    <div ref={dropdownRef} className="relative w-64 p-5 bg-white shadow-md">
+    <div ref={dropdownRef} className="relative w-full xs:w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 2xl:w-96 p-3 xs:p-4 bg-white shadow-md">
       {/* Dropdown Button */}
       <div
         className="flex justify-between rounded-r-lg items-center cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="text-gray-800 font-medium">Price Per Night</span>
+        <span className="text-gray-800 text-sm xs:text-base font-medium">Price Per Night</span>
         <IoIosArrowDown className={`text-blue-500 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </div>
 
       {/* Selected Prices Display */}
-      <div className="mt-2 text-gray-900 font-semibold">
+      <div className="mt-2 text-gray-900 text-sm xs:text-base font-semibold">
         {selectedPrices.join(", ")}...
       </div>
 
@@ -48,7 +48,7 @@ export default function PricePerNight() {
           {priceOptions.map((price, index) => (
             <div
               key={index}
-              className="px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+              className="px-4 py-2 text-sm xs:text-base text-gray-700 hover:bg-gray-100 cursor-pointer"
               onClick={() => handleSelect(price)}
             >
               {price}

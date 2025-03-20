@@ -26,21 +26,21 @@ function Location() {
   }, []);
 
   return (
-    <div className="relative w-80" ref={dropdownRef}>
+    <div className="relative w-full xs:w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 2xl:w-96" ref={dropdownRef}>
       <div
-        className="p-[1.1em] rounded-l-lg bg-white shadow-md cursor-pointer"
+        className="p-3 xs:p-4 rounded-l-lg bg-white shadow-md cursor-pointer"
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
-        <p className="text-gray-500 text-sm">City, Property Name Or Location</p>
-        <h2 className="text-xl font-bold">{selectedLocation}</h2>
-        <p className="text-gray-400 text-sm">India</p>
+        <p className="text-gray-500 text-xs xs:text-sm">City, Property Name Or Location</p>
+        <h2 className="text-lg xs:text-xl font-bold">{selectedLocation}</h2>
+        <p className="text-gray-400 text-xs xs:text-sm">India</p>
       </div>
       {isDropdownOpen && (
         <div className="absolute w-full mt-2 bg-white shadow-lg rounded-lg p-2 z-10">
           <input
             type="text"
             placeholder="Where do you want to stay?"
-            className="w-full p-2 border-b outline-none text-gray-700"
+            className="w-full p-2 border-b outline-none text-gray-700 text-sm xs:text-base"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -48,7 +48,7 @@ function Location() {
             {filteredLocations.map((location, index) => (
               <li
                 key={index}
-                className={`p-2 cursor-pointer hover:bg-gray-100 ${
+                className={`p-2 cursor-pointer hover:bg-gray-100 text-sm xs:text-base ${
                   selectedLocation === location ? "bg-gray-200" : ""
                 }`}
                 onClick={() => {

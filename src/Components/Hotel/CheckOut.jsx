@@ -23,16 +23,16 @@ const CheckOut = () => {
   }, []);
 
   return (
-    <div className="relative w-60" ref={dropdownRef}>
+    <div className="relative w-full xs:w-48 sm:w-56 md:w-60 lg:w-64 xl:w-72 2xl:w-80" ref={dropdownRef}>
       {/* Button to Toggle Date Picker */}
       <div
-        className="border-none drop-shadow-lg p-4 cursor-pointer flex justify-between items-center bg-white"
+        className="border-none drop-shadow-lg p-3 xs:p-4 cursor-pointer flex justify-between items-center bg-white"
         onClick={() => setIsOpen(!isOpen)}
       >
         <div>
-          <p className="text-gray-500 text-sm">Return</p>
-          <p className="text-xl font-bold">{format(startDate, "dd MMM'")}</p>
-          <p className="text-gray-500">{format(startDate, "EEEE")}</p>
+          <p className="text-gray-500 text-xs xs:text-sm">Check-Out</p>
+          <p className="text-lg xs:text-xl font-bold">{format(startDate, "dd MMM'")}</p>
+          <p className="text-gray-500 text-xs xs:text-sm">{format(startDate, "EEEE")}</p>
         </div>
         <FaChevronDown className="text-blue-500" />
       </div>

@@ -5,7 +5,7 @@ import { format } from "date-fns";
 import { FaChevronDown } from "react-icons/fa";
 
 const Departure = () => {
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(new Date(1));
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 

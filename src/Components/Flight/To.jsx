@@ -4,12 +4,12 @@ import { IoIosSearch } from "react-icons/io";
 
 const airports = {
   recent: [
-    { name: "Indore, India", code: "IDR", details: "Devi Ahilyabai Holkar International Airport" },
+    { name: "Kerela, India", code: "KRL", details: "Kannur International Airport" },
   ],
   popular: [
     { name: "Mumbai, India", code: "BOM", details: "Chhatrapati Shivaji International Airport" },
     { name: "New Delhi, India", code: "DEL", details: "Indira Gandhi International Airport" },
-    { name: "Bangkok, Thailand", code: "BKK", details: "Bangkok" },
+    { name: "Kerela, India", code: "KRL", details: "Kannur International Airport" },
   ],
 };
 

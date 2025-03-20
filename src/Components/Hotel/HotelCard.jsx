@@ -1,108 +1,117 @@
 import React from "react";
 
-const destinations = [
+const hotels = [
   {
-    name: "Goa",
-    image: "https://plus.unsplash.com/premium_photo-1661964446598-630884d8d1c9?q=80&w=2081&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Hotels, Budget Hotels, Resorts, Best Hotels, North Goa, Villas",
+    name: "Crowne Plaza Kochi",
+    distance: "Kundanoor Junction NH-47 Bypass",
+    rating: 4.8,
+    reviews: 22,
+    price: 26978,
+    stars: 5,
+    image: " https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: "Delhi",
-    image: "https://images.unsplash.com/photo-1723108034000-e7fd897e3be0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Hotels, Budget Hotels, Resorts, Best Hotels, Near IGI Airport",
+    name: "Radisson Blu Hotel, Kochi",
+    distance: "Sahodaran Ayyappan Rd, ",
+    rating: 4.4,
+    reviews: 13,
+    price: 5844,
+    stars: 4,
+    image: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: "Bangalore",
-    image: "https://images.unsplash.com/photo-1709805471116-26c5adf3012b?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Hotels, Budget Hotels, Resorts, Near Airport, Guhantara Resort",
+    name: "Taj Wayanad Resort",
+    distance: " Manjoora East Crescent Road",
+    rating: 4.6,
+    reviews: 14,
+    price: 1080,
+    stars: 4,
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: "Ooty",
-    image: "https://images.unsplash.com/photo-1697229607256-2f00764adec0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Hotels, Resorts, Cottages, Budget Hotels, Homestay",
+    name: "Taj Wayanad Resort",
+    distance: " Manjoora East Crescent Road",
+    rating: 4.6,
+    reviews: 14,
+    price: 1080,
+    stars: 4,
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: "Mumbai",
-    image: "https://images.unsplash.com/photo-1685697075109-7e51a8006c7d?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Hotels, Budget Hotels, Resorts, Near Mumbai Airport",
+    name: "Taj Wayanad Resort",
+    distance: " Manjoora East Crescent Road",
+    rating: 4.6,
+    reviews: 14,
+    price: 1080,
+    stars: 4,
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: "Shimla",
-    image: "https://images.unsplash.com/photo-1710398867368-3adba74f7d89?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Hotels, Budget Hotels, Best Hotels, Resorts, Near Mall Road",
+    name: "Taj Wayanad Resort",
+    distance: " Manjoora East Crescent Road",
+    rating: 4.6,
+    reviews: 14,
+    price: 1080,
+    stars: 4,
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: "Jaipur",
-    image: "https://images.unsplash.com/photo-1638619281167-b134b7fb3095?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Hotels, Resorts, Budget Hotels, Best Hotels, Near Railway Station",
+    name: "Taj Wayanad Resort",
+    distance: " Manjoora East Crescent Road",
+    rating: 4.6,
+    reviews: 14,
+    price: 1080,
+    stars: 4,
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: "Manali",
-    image: "https://images.unsplash.com/photo-1640114162784-20c35f7aec3f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Hotels, Resorts, Budget Hotels, Best Hotels, Near Mall Road",
-  },
-  {
-    name: "Dubai",
-    image: "https://images.unsplash.com/photo-1699796831583-b398459387f6?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Hotels, Budget Hotels, 5 Star Hotels, Apart-Hotels, Homestays",
-  },
-  {
-    name: "Singapore",
-    image: "https://images.unsplash.com/photo-1640114162784-20c35f7aec3f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Hotels, 5 Star Hotels, Little India, Orchard Road, Sentosa",
-  },
-  {
-    name: "Bangkok",
-    image: "https://images.unsplash.com/photo-1658203117798-dbfb909019bc?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Hotels, 3 Star Hotels, 5 Star Hotels, Hostels, Budget Hotels",
-  },
-  {
-    name: "Pattaya",
-    image: "https://plus.unsplash.com/premium_photo-1661964079694-ccfaf7dc8028?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Hotels, Budget Hotels, 5 Star Hotels, Resorts, Central Pattaya",
-  },
-  {
-    name: "Phuket",
-    image: "https://images.unsplash.com/photo-1699796831583-b398459387f6?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Hotels, Resorts, Budget Hotels, Beachfront Properties",
-  },
-  {
-    name: "Bali",
-    image: "https://images.unsplash.com/photo-1711707246899-cf0d1a5d0472?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Hotels, Resorts, 5 Star Hotels, Villas, Beachfront Properties",
-  },
-  {
-    name: "Maldives",
-    image: "https://images.unsplash.com/photo-1606787947151-1c54964042e5?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Hotels, 3 Star Hotels, Resorts, 5 Star Hotels, Hotels in Male",
-  },
-  {
-    name: "Others",
-    image: "https://images.unsplash.com/photo-1668503048231-3a23b7e65a28?q=80&w=2049&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Puri Hotels, OYO Delhi, Alleppey Houseboat, Mahabaleshwar Hotels",
+    name: "Taj Wayanad Resort",
+    distance: " Manjoora East Crescent Road",
+    rating: 4.6,
+    reviews: 14,
+    price: 1080,
+    stars: 4,
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
-const HotelCard = () => {
+const HotelCard = ({ hotel }) => {
   return (
-    <div className="container mx-auto p-2">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3">
-        {destinations.map((dest, index) => (
-          <div key={index} className="flex items-center space-x-4 p-1 bg-white rounded-lg shadow-md hover:shadow-lg transition">
-            <img
-              src={dest.image}
-              alt={dest.name}
-              className="w-13 h-13 rounded-full object-cover"
-            />
-            <div>
-              <h2 className="text-lg font-bold text-gray-900">{dest.name}</h2>
-              <p className="text-gray-600 text-sm">{dest.description}</p>
-            </div>
-          </div>
+    <div className="bg-white rounded-2xl shadow-lg overflow-hidden p-4 w-full sm:w-80">
+      <img
+        src={hotel.image}
+        alt={hotel.name}
+        className="w-full h-48 object-cover rounded-lg"
+      />
+      <div className="mt-4">
+        <h3 className="text-lg font-semibold">{hotel.name}</h3>
+        <p className="text-gray-500 text-sm">{hotel.distance}</p>
+        <div className="flex items-center mt-2">
+          <span className="text-lg font-bold">{hotel.rating}/5</span>
+          <span className="text-sm text-gray-500 ml-2">{hotel.reviews} reviews</span>
+        </div>
+        <div className="flex items-center mt-2">
+          {[...Array(hotel.stars)].map((_, i) => (
+            <span key={i} className="text-red-500">★</span>
+          ))}
+        </div>
+        <p className="text-xl font-bold mt-2">₹{hotel.price.toLocaleString()}</p>
+        <p className="text-sm text-gray-500">Per night</p>
+      </div>
+    </div>
+  );
+};
+
+const HotelList = () => {
+  return (
+    <div className="p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {hotels.map((hotel, index) => (
+          <HotelCard key={index} hotel={hotel} />
         ))}
       </div>
     </div>
   );
 };
 
-export default HotelCard;
+export default HotelList;
