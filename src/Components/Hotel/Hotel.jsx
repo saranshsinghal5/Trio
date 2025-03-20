@@ -6,6 +6,7 @@ import CheckOut from "./CheckOut";
 import PricePerNight from "./PricePerNight";
 import SearchBtn from "../Header/SearchBtn";
 import EEE from "../Flight/EEE";
+import HotelCard from "./HotelCard";
 
 
 function Hotel() {
@@ -24,8 +25,13 @@ function Hotel() {
             <SearchBtn/>
           </div>  
       </div>
-      <div className="mt-6 mb-15">
+      <div className="mt-6 mb-25">
         <EEE/>
+       </div  >
+
+       <div className="mt-6 mb-25">
+        <HotelCard/>
+        
        </div>
     </div>
   );

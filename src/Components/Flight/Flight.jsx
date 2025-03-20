@@ -7,6 +7,7 @@ import Return from "./Return";
 import BelowSelector from "./BelowSelector";
 import EEE from "./EEE";
 import SearchBtn from "../Header/SearchBtn";
+import FlightCards from "./FlightsCard";
 
 
 
@@ -28,8 +29,12 @@ function Flight() {
         <SearchBtn/>
       </div>
        
-       <div className="mt-10 mb-15">
+       <div className="mt-10 mb-25">
         <EEE/>
+       </div>
+
+       <div className="mt-5 mb-25">
+        <FlightCards/>
        </div>
     </div>
   );
