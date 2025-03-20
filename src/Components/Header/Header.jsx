@@ -1,62 +1,70 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import Navbar from "./Navbar";
+import RightImg from "./RightImg";
 
 function Header() {
   const serviceData = [
     {
-      //   image: flight,
+        image: "/Images/flight.png",
       purpose: "Flights",
       link: "flights",
     },
     {
-      //   image: hotel,
+        image: "/Images/hotel.png",
       purpose: "Hotels",
       link: "hotels",
     },
     {
-      //   image: cab,
+        image: "/Images/cab.png",
       purpose: "Cabs",
       link: "cabs",
     },
     {
-      //   image: homestay,
+        image: "/Images/homestay.png",
       purpose: "Homestays & Villa",
       link: "homestay",
     },
     {
-      //   image: card,
+        image: "/Images/card.png",
       purpose: "Forex Card",
       link: "card",
     },
     {
-      //   image: insurance,
+        image: "/Images/insurance.png",
       purpose: "Travel Insurance",
       link: "insurance",
     },
     {
-      //   image: train,
+        image: "/Images/train.png",
       purpose: "Trains",
       link: "train",
     },
     {
-      //   image: bus,
+        image: "/Images/bus.png",
       purpose: "Buses",
       link: "bus",
     },
     {
-      //   image: holiday,
+        image: "/Images/holiday.png",
       purpose: "Holiday packages",
       link: "holiday",
     },
   ];
 
   return (
+      <>
     <Link to="/">
-      <div>
-        <Link to="/">
-          <div className="static h-50 w-230 bg-cyan-50">
-            <div className="w-[73%] bg-white h-25 rounded-xl mx-50 mt-30 absolute">
-              <div className="pl-3 h-23 w-230 bg-white rounded-lg gap-3 flex drop-shadow-xl">
+        <div className=" h-140 w-full bg-left-bottom bg-[url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]" >
+        <div className=" pt-2 flex flex-row place-content-between">
+            <RightImg/>
+            <Navbar/>
+        </div>
+      <div className="static h-100 w-230">
+        <Link to="/Flights">
+          <div >
+            <div className="w-[73%] bg-white h-25 rounded-xl mx-50 mt-12 absolute">
+              <div className="pl-3 h-25 w-230 bg-white rounded-lg gap-3 flex drop-shadow-xl">
                 {serviceData.map((elem, index) => (
                   <NavLink
                     to={elem.link}
@@ -81,7 +89,9 @@ function Header() {
           </div>
         </Link>
       </div>
+        </div>
     </Link>
+    </>
   );
 }
 
