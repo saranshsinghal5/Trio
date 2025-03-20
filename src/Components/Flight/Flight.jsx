@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AboveSelector from "./AboveSelector";
 import From from "./From";
 import To from "./To";
@@ -10,6 +10,14 @@ import SearchBtn from "../Header/SearchBtn";
 import FlightCards from "./FlightsCard";
 
 function Flight() {
+  // State to track which dropdown is currently open
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+  // Function to handle dropdown toggle
+  const handleDropdownToggle = (dropdownName) => {
+    setOpenDropdown((prev) => (prev === dropdownName ? null : dropdownName));
+  };
+
   return (
     <div className="h-auto w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
       {/* Flight Search Form */}
@@ -17,22 +25,34 @@ function Flight() {
         <AboveSelector />
         <div className="py-4 flex flex-col md:flex-row flex-wrap gap-4">
           <div className="flex-1 min-w-[200px]">
-            <From />
+            <From
+              isOpen={openDropdown === "from"}
+              onToggle={() => handleDropdownToggle("from")}
+            />
           </div>
           <div className="flex-1 min-w-[200px]">
-            <To />
+            <To
+              isOpen={openDropdown === "to"}
+              onToggle={() => handleDropdownToggle("to")}
+            />
           </div>
           <div className="flex-1 min-w-[200px]">
-            <Departure />
+            <Departure
+              isOpen={openDropdown === "departure"}
+              onToggle={() => handleDropdownToggle("departure")}
+            />
           </div>
           <div className="flex-1 min-w-[200px]">
-            <Return />
+            <Return
+              isOpen={openDropdown === "return"}
+              onToggle={() => handleDropdownToggle("return")}
+            />
           </div>
         </div>
-        <div className="pb-4 ">
+        <div className="pb-4">
           <BelowSelector />
         </div>
-        <div className="flex  justify-center">
+        <div className="flex h-1 justify-center">
           <SearchBtn />
         </div>
       </div>

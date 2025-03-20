@@ -1,22 +1,36 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
 export default function PricePerNight() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedPrices, setSelectedPrices] = useState(["₹0-₹1500", "₹1500-₹2500"]);
+  const dropdownRef = useRef(null);
 
   const priceOptions = ["₹0-₹1500", "₹1500-₹2500", "₹2500-₹5000", "₹5000+"];
 
   const handleSelect = (price) => {
     setSelectedPrices([price]);
-    setIsOpen(false); // Close dropdown after selection
+    setIsOpen(false);
   };
 
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="relative w-64 p-5  bg-white shadow-md">
+    <div ref={dropdownRef} className="relative w-64 p-5 bg-white shadow-md">
       {/* Dropdown Button */}
       <div
-        className="flex  justify-between rounded-r-lg items-center cursor-pointer"
+        className="flex justify-between rounded-r-lg items-center cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="text-gray-800 font-medium">Price Per Night</span>

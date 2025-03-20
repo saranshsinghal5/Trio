@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FaPlane } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
 
@@ -17,6 +17,20 @@ const From = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedAirport, setSelectedAirport] = useState(airports.recent[0]);
+  const dropdownRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const filteredAirports = (category) =>
     airports[category].filter((airport) =>
@@ -24,7 +38,7 @@ const From = () => {
     );
 
   return (
-    <div className="relative w-auto mx-[2%] xm:w-60 sm:w-73 md:w-80 lg:w-90 xl:w-[400px] 2xl:w-[450px]">
+    <div className="relative w-auto mx-[2%] xm:w-60 sm:w-73 md:w-80 lg:w-90 xl:w-[400px] 2xl:w-[450px]" ref={dropdownRef}>
       {/* Input Box */}
       <div
         className="border-none drop-shadow-sm p-3 rounded-l-lg cursor-pointer bg-white"

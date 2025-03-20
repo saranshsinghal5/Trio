@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FaPlane } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
 
@@ -18,6 +17,20 @@ const To = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedAirport, setSelectedAirport] = useState(airports.recent[0]);
+  const dropdownRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const filteredAirports = (category) =>
     airports[category].filter((airport) =>
@@ -25,10 +38,10 @@ const To = () => {
     );
 
   return (
-    <div className="relative w-80">
+    <div className="relative w-80" ref={dropdownRef}>
       {/* Input Box */}
       <div
-        className="border-none drop-shadow-sm p-3  cursor-pointer bg-white"
+        className="border-none drop-shadow-sm p-3 cursor-pointer bg-white"
         onClick={() => setIsOpen(!isOpen)}
       >
         <p className="text-gray-500 mt-[-3px] text-sm">To</p>
@@ -38,13 +51,13 @@ const To = () => {
 
       {/* Dropdown */}
       {isOpen && (
-        <div className="absolute w-full  bg-white border rounded-lg shadow-lg z-10">
+        <div className="absolute w-full bg-white border rounded-lg shadow-lg z-10">
           {/* Search Bar */}
           <div className="py-2 border-b flex items-center">
             <IoIosSearch className="text-gray-400 text-xl ml-2" />
             <input
               type="text"
-              placeholder="From"
+              placeholder="To"
               className="w-full px-3 py-1 outline-none"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}

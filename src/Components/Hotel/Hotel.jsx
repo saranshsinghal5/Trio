@@ -28,7 +28,7 @@ function Hotel() {
           </div>
         </div>
 
-        <div className="flex justify-center mt-4">
+        <div className="flex h-1 justify-center mt-4">
           <SearchBtn />
         </div>
       </div>

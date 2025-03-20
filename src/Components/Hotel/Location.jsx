@@ -1,33 +1,42 @@
-import React from 'react'
-import { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 function Location() {
-
   const [selectedLocation, setSelectedLocation] = useState("Goa");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const dropdownRef = useRef(null);
 
   const locations = ["Mumbai", "Bengaluru", "Goa", "Chennai", "Dubai", "Jaipur"];
 
   const filteredLocations = locations.filter((location) =>
     location.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsDropdownOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="relative w-80">
-     
+    <div className="relative w-80" ref={dropdownRef}>
       <div
-        className=" p-[1.1em] rounded-l-lg  bg-white shadow-md cursor-pointer"
+        className="p-[1.1em] rounded-l-lg bg-white shadow-md cursor-pointer"
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
         <p className="text-gray-500 text-sm">City, Property Name Or Location</p>
         <h2 className="text-xl font-bold">{selectedLocation}</h2>
         <p className="text-gray-400 text-sm">India</p>
       </div>
-
-    
       {isDropdownOpen && (
         <div className="absolute w-full mt-2 bg-white shadow-lg rounded-lg p-2 z-10">
-         
           <input
             type="text"
             placeholder="Where do you want to stay?"
@@ -35,8 +44,6 @@ function Location() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-
-        
           <ul className="max-h-48 overflow-y-auto">
             {filteredLocations.map((location, index) => (
               <li
@@ -57,10 +64,7 @@ function Location() {
         </div>
       )}
     </div>
-  )
+  );
 }
 
-export default Location
-
-
-
+export default Location;
