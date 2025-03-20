@@ -7,17 +7,27 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
+  Routes,
   RouterProvider,
 } from "react-router-dom";
 import Layout from "./Layout.jsx";
 import Flight from "./Components/Flight/Flight.jsx";
+import Hotel from "./Components/Hotel/Hotel.jsx";
+import Packages from "./Components/Packages/Packages.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
+    <>
+   
     <Route path="/" element={<Layout />}>
       <Route path="/" element={<Flight />}/>
       <Route path="/Flights" element={<Flight />}/>
+      <Route path="/Hotels" element={<Hotel/>}/>
     </Route>
+    <Route path="/Packages" element={<Packages/>}/> 
+
+
+    </>
   )
 );
 createRoot(document.getElementById("root")).render(

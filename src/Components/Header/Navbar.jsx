@@ -7,7 +7,7 @@ function Navbar() {
  <div className='uppercase flex gap-7 w-[66%] mt-3 text-sm text-white font-semibold'>
     <Link to="#">Home</Link>
     <Link to="#">About</Link>
-    <Link to="/packages">Packages</Link>
+    <Link to="/Packages">Packages</Link>
     <Link to="#">Services</Link>
     <Link to="#">Portfolio</Link>
     <Link to="#">Blog</Link>
