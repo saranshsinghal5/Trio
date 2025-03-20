@@ -24,10 +24,10 @@ const From = () => {
     );
 
   return (
-    <div className="relative w-80">
+    <div className="relative w-auto mx-[2%] xm:w-60 sm:w-73 md:w-80 lg:w-90 xl:w-[400px] 2xl:w-[450px]">
       {/* Input Box */}
       <div
-        className="border-none drop-shadow-sm  p-3 rounded-l-lg cursor-pointer bg-white"
+        className="border-none drop-shadow-sm p-3 rounded-l-lg cursor-pointer bg-white"
         onClick={() => setIsOpen(!isOpen)}
       >
         <p className="text-gray-500 mt-[-3px] text-sm">From</p>
